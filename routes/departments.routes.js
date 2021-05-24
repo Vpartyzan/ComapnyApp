@@ -29,7 +29,7 @@ router.post('/departments', (req, res) => {
   req.db.collection('departments').insertOne({ name: name }, err => {
     if(err) res.status(500).json({ message: err });
     else res.json( { message: 'OK' });
-  })
+  });
 });
 
 router.put('/departments/:id', (req, res) => {
