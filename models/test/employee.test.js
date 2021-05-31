@@ -1,12 +1,11 @@
 const Employee = require('../employee.model.js');
 
-const mongoose = require('mongoose');
 const expect = require('chai').expect;
 
 describe('Employee', () => {
   it("should throw an error if no arg", () => {
     const emp = new Employee({});
-    
+
     emp.validate((err) => {
       expect(err.errors.firstName).to.exist;
       expect(err.errors.lastName).to.exist;
@@ -40,8 +39,4 @@ describe('Employee', () => {
     });
   })
 
-});
-
-after(() => {
-  mongoose.models = {};
 });
