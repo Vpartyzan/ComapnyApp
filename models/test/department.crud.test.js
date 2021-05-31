@@ -131,15 +131,13 @@ describe('Department', () => {
   
     it('should properly remove multiple documents with "deleteMany" method', async () => {
       await Department.deleteMany(); 
-           
+
       const departments = await Department.find();
       expect(departments.length).to.be.equal(0);
     });
 
     afterEach(async () => {
       await Department.deleteMany();
-    });
-  
+    });  
   });
-
 });
